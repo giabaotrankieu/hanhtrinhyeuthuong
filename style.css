@@ -47,7 +47,7 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
     align-items: center;
 }
 
@@ -93,17 +93,6 @@ nav ul li a:hover {
 
 .dropdown:hover .dropdown-menu {
     display: flex;
-}
-
-.nav-donate {
-    background: var(--secondary-color);
-    color: white !important;
-    padding: 8px 20px;
-    border-radius: 20px;
-}
-
-.nav-donate:hover {
-    opacity: 0.9;
 }
 
 /* Banner chính */
@@ -159,7 +148,7 @@ nav ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* --- CODE CSS HIỆU ỨNG TRÁI TIM MỚI THÊM --- */
+/* Hiệu ứng trái tim và chữ gõ */
 .heart-typing-container {
     position: relative;
     width: 320px;  
@@ -278,6 +267,8 @@ nav ul li a:hover {
     max-width: 600px;
     width: 90%;
     position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .popup-content img {
@@ -296,13 +287,18 @@ nav ul li a:hover {
     color: #333;
 }
 
-.btn {
-    display: inline-block;
-    background: var(--secondary-color);
-    color: white;
-    padding: 10px 25px;
-    border-radius: 5px;
+/* Thông tin liên hệ trong Popup */
+.contact-info-box {
+    background: #f0f6ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
     margin-top: 15px;
+    border-radius: 0 5px 5px 0;
+    font-size: 15px;
+}
+
+.contact-info-box strong {
+    color: var(--primary-color);
 }
 
 /* Footer */
