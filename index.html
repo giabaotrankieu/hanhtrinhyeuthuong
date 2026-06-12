@@ -3,158 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hành Trình Yêu Thương | Cầu Nối Nhân Ái</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Đà Nẵng Charity - Kết nối yêu thương</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="loader">
-        <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Đang tải...</span>
-        </div>
-    </div>
+    <header>
+        <div class="top-header">
+            <div class="logo">VKU_ALLSTARS</div>
+            <nav>
+                <ul>
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="danhsach.html">HOÀN CẢNH</a></li>
+                    <li class="dropdown">
+   <a>CHƯƠNG TRÌNH</a>
 
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-primary" href="#">
-                <i class="fa-solid fa-hands-holding-circle me-2"></i>Hành Trình Yêu Thương
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#home">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cases">Hoàn cảnh</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#process">Quy trình</a></li>
-                    <li class="nav-item"><a class="nav-link btn-contact ms-2" href="#contact">Liên hệ</a></li>
+    <ul class="dropdown-menu">
+        <li><a href="tiepsucdentruong.html">Tiếp sức đến trường</a></li>
+        <li><a href="buacomyeuthuong.html">Bữa cơm yêu thương</a></li>
+        <li><a href="cuutromientrung.html">Cứu trợ miền Trung</a></li>
+    </ul>
+</li>
+                    
+                    <li><a href="ungho.html" class="nav-donate">ỦNG HỘ NGAY</a></li>
+
                 </ul>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>   
 
-    <div class="disclaimer-banner">
-        <div class="container text-center">
-            <i class="fa-solid fa-circle-info me-2"></i>
-            <strong>Lưu ý:</strong> Website KHÔNG kêu gọi từ thiện, KHÔNG nhận quyên góp. Chúng tôi chỉ là cầu nối thông tin.
-        </div>
+    <section class="banner">
+
+    <div class="slides">
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
     </div>
 
-    <section id="home" class="hero d-flex align-items-center">
-        <div class="container text-center text-white" data-aos="fade-up" data-aos-duration="1000">
-            <h1 class="display-3 fw-bold mb-4">
-                <span id="typing-text"></span><span class="cursor">|</span>
-            </h1>
-            <p class="lead mb-5">Kết nối những tấm lòng nhân ái với những hoàn cảnh cần được sẻ chia.</p>
-            <div>
-                <a href="#cases" class="btn btn-primary btn-lg rounded-pill me-3 px-4 shadow">Khám phá ngay</a>
-                <a href="#about" class="btn btn-outline-light btn-lg rounded-pill px-4">Tìm hiểu thêm</a>
-            </div>
+    <div class="overlay">
+        <h1>Chung tay vì cộng đồng</h1>
+        <p>Mỗi sự giúp đỡ là một hy vọng được thắp sáng</p>
+    </div>
+
+</section>
+
+    <section class="services">
+        <div class="box">
+            <a href="danhsach2.html">
+                <img src="anh_lam_web\anh6.jpg" style="width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:15px;">
+                <h3>Trẻ em nghèo</h3>
+                <p>Giúp các em đến trường</p>
+            </a>    
+        </div>
+        <div class="box">
+            <a href="danhsach3.html">
+                <img src="anh_lam_web\anh17.webp" alt="Người già neo đơn" style="width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:15px;">
+                <h3>Người già neo đơn</h3>
+                <p>Chăm sóc tuổi già</p>
+            </a>    
+        </div>
+        <div class="box">
+            <a href="danhsach4.html">
+                <img src="anh_lam_web\anh7.jpg" alt="Quỹ cứu trợ" style="width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:15px;">
+                <h3>Quỹ cứu trợ</h3>
+                <p>Ứng phó thiên tai</p>
+            </a>    
         </div>
     </section>
 
-    <section class="stats-section py-5 bg-light">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <h2 class="display-4 fw-bold text-primary counter" data-target="150">0</h2>
-                    <p class="text-muted">Hoàn cảnh đã đăng</p>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <h2 class="display-4 fw-bold text-secondary counter" data-target="85">0</h2>
-                    <p class="text-muted">Kết nối thành công</p>
-                </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <h2 class="display-4 fw-bold text-primary counter" data-target="12">0</h2>
-                    <p class="text-muted">Tỉnh thành hỗ trợ</p>
-                </div>
-            </div>
-        </div>
+    <section class="news">
+        <h2>HOÀN CẢNH CẦN GIÚP ĐỠ</h2>
+        <div class="news-container">
+
+    <a href="#popup1" class="news-card">
+        <img src="anh_lam_web\anh18.webp" alt="hinh anh">
+        <h3>Bé Quân chiến đấu với ung thư</h3>
+        <p>Bệnh nhi ung thư máu cần hỗ trợ kinh phí phẫu thuật gấp tại BV Đà Nẵng...</p>
+    </a>
+
+    <a href="#popup2" class="news-card">
+        <img src="anh_lam_web\anh20.jpg" alt="hinh anh">
+        <h3>Mái nhà nhỏ của cụ Tư</h3>
+        <p>Cụ già neo đơn tại Hòa Vang sống trong căn nhà dột nát sau bão...</p>
+    </a>
+
+    <a href="#popup3" class="news-card">
+        <img src="anh_lam_web\anh21.jpg" alt="hinh anh">
+        <h3>Ước mơ đến trường của hai anh em</h3>
+        <p>Hai em nhỏ mồ côi tại Liên Chiểu cần hỗ trợ học phí và chi phí sinh hoạt...</p>
+    </a>
+
+</div>
     </section>
 
-    <section id="process" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold section-title">Quy trình kết nối</h2>
-                <p class="text-muted">Minh bạch - Trực tiếp - Không qua trung gian</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="process-icon bg-primary text-white mb-3"><i class="fa-solid fa-inbox"></i></div>
-                    <h5>1. Tiếp nhận</h5>
-                    <p class="small text-muted">Nhận thông tin về các hoàn cảnh khó khăn từ cộng đồng.</p>
-                </div>
-                <div class="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="process-icon bg-primary text-white mb-3"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h5>2. Xác minh</h5>
-                    <p class="small text-muted">Đội ngũ xác minh tính chân thực của thông tin.</p>
-                </div>
-                <div class="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="process-icon bg-primary text-white mb-3"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h5>3. Đăng tải</h5>
-                    <p class="small text-muted">Cập nhật hồ sơ hoàn chỉnh lên nền tảng website.</p>
-                </div>
-                <div class="col-md-3 text-center" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="process-icon bg-secondary text-white mb-3"><i class="fa-solid fa-handshake-angle"></i></div>
-                    <h5>4. Kết nối trực tiếp</h5>
-                    <p class="small text-muted">Mạnh thường quân liên hệ và hỗ trợ trực tiếp không qua trung gian.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+           <a href="#close" class="close-btn">×</a>
+            <h2>Chi tiết hoàn cảnh</h2>
+            <hr><br>
+            <p>
+                <img src="anh_lam_web/anh18.webp" alt="">
+    Bé Minh Quân, 7 tuổi, hiện đang điều trị bệnh ung thư máu tại
+    Bệnh viện Đà Nẵng. Cha em làm phụ hồ, mẹ bán vé số nên thu nhập
+    không ổn định. Suốt nhiều tháng qua, gia đình đã vay mượn khắp nơi
+    để có tiền chữa trị cho em.
+</p>
 
-    <section id="cases" class="py-5 bg-light">
-        <div class="container py-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold section-title">Hoàn cảnh nổi bật</h2>
-                <p class="text-muted">Những câu chuyện cần sự chung tay từ cộng đồng</p>
-            </div>
-            <div class="row g-4" id="cases-container">
-                </div>
-            <div class="text-center mt-5">
-                <a href="#" class="btn btn-outline-primary rounded-pill px-4">Xem tất cả hoàn cảnh <i class="fa-solid fa-arrow-right ms-2"></i></a>
-            </div>
-        </div>
-    </section>
+<br>
 
-    <footer class="bg-dark text-white py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3"><i class="fa-solid fa-hands-holding-circle me-2 text-primary"></i>Hành Trình Yêu Thương</h5>
-                    <p class="small text-white-50">Nền tảng kết nối thông tin thiện nguyện minh bạch, an toàn và trực tiếp. Chúng tôi không tiếp nhận bất kỳ khoản đóng góp tài chính nào.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="fw-bold mb-3">Liên hệ</h5>
-                    <ul class="list-unstyled small text-white-50">
-                        <li class="mb-2"><i class="fa-solid fa-envelope me-2"></i> contact@hanhtrinhyeuthuong.vn</li>
-                        <li class="mb-2"><i class="fa-solid fa-phone me-2"></i> 0123 456 789</li>
-                        <li class="mb-2"><i class="fa-solid fa-location-dot me-2"></i> Đà Nẵng, Việt Nam</li>
-                    </ul>
-                </div>
-                <div class="col-md-4 text-md-end">
-                    <h5 class="fw-bold mb-3">Kết nối với chúng tôi</h5>
-                    <a href="#" class="btn btn-outline-light rounded-circle me-2"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="btn btn-outline-light rounded-circle me-2"><i class="fa-brands fa-youtube"></i></a>
-                </div>
-            </div>
-            <hr class="mt-4 mb-3 border-secondary">
-            <div class="text-center small text-white-50">
-                &copy; 2026 Hành Trình Yêu Thương. Thiết kế bởi Sinh viên CNTT.
-            </div>
+<p>
+    Mỗi đợt hóa trị kéo dài khiến sức khỏe bé ngày càng yếu đi,
+    tóc rụng nhiều và thường xuyên phải nhập viện khẩn cấp.
+    Dù vậy, Quân vẫn luôn mong muốn được tiếp tục đến trường
+    và gặp lại bạn bè như trước.
+</p>
+
+<br>
+
+<p>
+    Hiện gia đình không còn đủ khả năng chi trả viện phí,
+    thuốc men và chi phí sinh hoạt trong thời gian điều trị.
+    Rất mong nhận được sự chung tay giúp đỡ từ cộng đồng
+    để bé có thêm cơ hội tiếp tục chữa bệnh.
+</p>
+            <br>
+            <a href="ungho.html" class="btn" style="text-decoration:none;">ỦNG HỘ NGAY</a>
         </div>
+    </div>
+<div id="popup2" class="popup">
+    <div class="popup-content">
+        <a href="#close" class="close-btn">×</a>
+
+        <h2>Chi tiết hoàn cảnh</h2>
+        <hr><br>
+
+        <p>
+            <img src="anh_lam_web/anh20.jpg" alt="">
+            Cụ bà 78 tuổi hiện đang sống một mình tại huyện Hòa Vang.
+            Sau đợt mưa bão vừa qua, căn nhà cấp 4 đã xuống cấp nghiêm trọng,
+            mái tôn bị tốc, tường nứt và thường xuyên bị dột khi trời mưa.
+        </p>
+
+        <br>
+
+        <p>
+            Hoàn cảnh khó khăn khiến cụ không đủ khả năng sửa chữa nhà cửa
+            cũng như trang trải chi phí sinh hoạt hằng ngày.
+            Rất mong nhận được sự chung tay hỗ trợ từ cộng đồng.
+        </p>
+
+        <br>
+
+        <a href="ungho.html" class="btn" style="text-decoration:none;">
+            ỦNG HỘ NGAY
+        </a>
+    </div>
+</div>
+<div id="popup3" class="popup">
+    <div class="popup-content">
+        <a href="#close" class="close-btn">×</a>
+        <h2>Chi tiết hoàn cảnh</h2>
+        <hr><br>
+
+        <p>
+            <img src="anh_lam_web/anh21.jpg" alt="">
+            Hai em nhỏ hiện đang sống cùng bà ngoại lớn tuổi tại quận Liên Chiểu.
+            Gia đình không có nguồn thu nhập ổn định nên việc học tập gặp rất nhiều khó khăn.
+            Các em cần được hỗ trợ học phí, sách vở và chi phí sinh hoạt hằng ngày.
+        </p>
+
+        <br>
+
+        <a href="ungho.html" class="btn" style="text-decoration:none;">
+            ỦNG HỘ NGAY
+        </a>
+    </div>
+</div>
+
+    <footer>
+        <p>© Hành Trình Yêu Thương</p>
+        <p>Địa chỉ: Đà Nẵng, Việt Nam | Email: contact@charity.org</p>
     </footer>
 
-    <a href="#" id="back-to-top" class="btn btn-primary rounded-circle"><i class="fa-solid fa-arrow-up"></i></a>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

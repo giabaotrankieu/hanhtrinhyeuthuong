@@ -1,164 +1,1113 @@
-/* VARIABLES */
+/* style.css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 :root {
-    --primary-color: #0d6efd; /* Xanh dương chuyên nghiệp */
-    --secondary-color: #fd7e14; /* Cam nhạt, ấm áp */
-    --text-dark: #2b3440;
-    --text-muted: #6c757d;
+    --primary-color: #004a99; /* Xanh Charity */
+    --secondary-color: #f39200; /* Cam nhấn mạnh */
     --bg-light: #f8f9fa;
-    --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    --hover-shadow: 0 15px 35px rgba(13, 110, 253, 0.15);
-    --border-radius: 16px;
+    --text-dark: #333;
 }
 
 body {
-    font-family: 'Be Vietnam Pro', sans-serif;
+    background: linear-gradient(135deg, #e8f1ff, #f8f9fa, #fff4e5);
+    min-height: 100vh;
     color: var(--text-dark);
-    scroll-behavior: smooth;
-    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* LOADER */
-#loader {
-    position: fixed;
-    inset: 0;
+/* Header & Nav */
+header {
     background: white;
-    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.top-header {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Nút Quyên góp trên Nav */
+.nav-donate {
+    background: var(--secondary-color);
+    color: white !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+}
+
+/* ===== Banner Slider ===== */
+
+.banner {
+    position: relative;
+    height: 700px; /* cao hơn để bao quát xuống dưới */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: opacity 0.5s ease;
+    color: white;
+    text-align: center;
 }
 
-/* NAVBAR & DISCLAIMER */
-.disclaimer-banner {
-    background-color: #fff3cd;
-    color: #856404;
-    font-size: 0.9rem;
-    padding: 8px 0;
-    position: fixed;
-    top: 0;
+/* Overlay tối */
+.banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+}
+
+/* Nội dung chữ */
+.overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.overlay h1 {
+    font-size: 55px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    animation: fadeUp 1s ease;
+}
+
+.overlay p {
+    font-size: 22px;
+    animation: fadeUp 1.5s ease;
+}
+
+/* Slides */
+.slides {
+    position: absolute;
     width: 100%;
-    z-index: 1040;
+    height: 100%;
 }
 
-#mainNav {
-    top: 36px; /* Below disclaimer */
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-size: cover;
+    background-position: center;
+    animation: slider 15s infinite;
 }
 
-.btn-contact {
-    background-color: var(--secondary-color);
-    color: white !important;
-    border-radius: 50px;
-    padding: 8px 20px !important;
+.slide:nth-child(1) {
+    background-image: url('anh_lam_web/anh-nguoigia.jpg');
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    background-image: url('anh_lam_web/anh3.jpeg');
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3) {
+    background-image: url('anh_lam_web/anh4.jpg');
+    animation-delay: 10s;
+}
+
+@keyframes slider {
+
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Hiệu ứng chữ */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Services/Categories */
+.services {
+    max-width: 1200px;
+    margin: -80px auto 50px;
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.box {
+    background: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+.box a { text-decoration: none; color: inherit; }
+.box h3 { color: var(--primary-color); margin-bottom: 10px; }
+
+.news {
+    max-width: 1200px;
+    margin: 50px auto;
+    position: relative;
+    z-index: 20;
+    padding: 0 20px;
+}
+
+.news h2 {
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 15px;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.news-container, .more-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card h3 {
+    padding: 15px 15px 5px;
+    font-size: 18px;
+    color: var(--primary-color);
+}
+
+.news-card p {
+    padding: 0 15px 15px;
+    font-size: 14px;
+    color: #666;
+    flex-grow: 1;
+}
+
+/* Checkbox "Xem thêm" */
+#more { display: none; }
+.more-content { display: none; margin-top: 25px; }
+#more:checked ~ .more-content { display: grid; }
+
+.btn {
+    display: block;
+    margin: 40px auto;
+    padding: 12px 35px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+label.btn::after {
+    content: "XEM TẤT CẢ";
+}
+
+#more:checked ~ label.btn::after {
+    content: "THU GỌN";
+}
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 2000;
+}
+.popup:target { display: flex; align-items: center; justify-content: center; }
+
+.popup-content {
+    width: 90%;
+    max-width: 700px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: #ccc;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+/* Hiệu ứng chung cho tất cả các nút có class .btn hoặc .nav-donate */
+.btn, .nav-donate, .overlay button {
+    transition: all 0.3s ease; /* Tạo độ mượt 0.3 giây khi đổi trạng thái */
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
-.btn-contact:hover {
-    background-color: #e86b00;
+/* Hiệu ứng nút "ỦNG HỘ NGAY" trên Header */
+.nav-donate:hover {
+    background-color: #d68100 !important; /* Đổi màu cam đậm hơn */
+    transform: translateY(-2px); /* Nhảy lên nhẹ */
+    box-shadow: 0 4px 12px rgba(243, 146, 0, 0.4); /* Thêm bóng đổ màu cam */
+}
+
+/* Hiệu ứng nút trong Popup và nút "Xem tất cả" */
+.btn:hover {
+    background-color: #003366; /* Đổi sang xanh đậm hơn */
+    transform: scale(1.05); /* Phóng to nhẹ 5% */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hiệu ứng "nhấp nháy" nhẹ để thu hút sự chú ý (Click effect) */
+.btn:active, .nav-donate:active {
+    transform: scale(0.95); /* Thu nhỏ lại khi nhấn chuột vào */
+}
+
+/* Hiệu ứng cho các Card Hoàn Cảnh khi di chuột vào */
+.news-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-10px); /* Bay lên cao hơn một chút */
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* Nút Đóng (X) trong Popup */
+.close-btn {
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg); /* Xoay dấu X khi di chuột vào */
+    color: #ff0000;
+}
+/* ===== Donate Form ===== */
+
+.donate-section{
+    padding: 80px 20px;
+    background: #f5f7fb;
+}
+
+.donate-container{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.donate-left h2{
+    font-size: 38px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.donate-left p{
+    margin-bottom: 25px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.donate-left img{
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.donate-right{
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0,74,153,0.1);
+}
+
+.money-box{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.money-box button{
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: #eef3f9;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.money-box button:hover{
+    background: var(--primary-color);
+    color: white;
+}
+
+.donate-btn{
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: var(--secondary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.donate-btn:hover{
+    background: #d68100;
     transform: translateY(-2px);
 }
 
-/* HERO SECTION */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 32, 96, 0.7), rgba(0, 32, 96, 0.7)), 
-                url('https://images.unsplash.com/photo-1593113565214-80afcb4a4771?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-    background-attachment: fixed;
-    padding-top: 100px;
-}
+/* Responsive */
 
-.cursor {
-    animation: blink 0.7s infinite;
-}
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@media(max-width: 900px){
 
-/* SECTION TITLES */
-.section-title {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-.section-title::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 4px;
-    background: var(--secondary-color);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
+    .donate-container{
+        grid-template-columns: 1fr;
+    }
 
-/* PROCESS ICONS */
-.process-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
+}
+/* Popup cảm ơn */
+
+.thanks-popup{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
-    margin: 0 auto;
-    box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
-}
-.process-icon:hover {
-    transform: scale(1.1) rotate(5deg);
+    z-index: 9999;
 }
 
-/* CARDS */
-.case-card {
-    border: none;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-    transition: all 0.4s ease;
+.thanks-box{
     background: white;
-    height: 100%;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    animation: popupShow 0.4s ease;
 }
-.case-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--hover-shadow);
+
+.thanks-box h2{
+    color: var(--primary-color);
+    margin-bottom: 15px;
 }
-.case-img-wrap {
-    overflow: hidden;
-    height: 220px;
+
+.thanks-box p{
+    color: #555;
+    margin-bottom: 20px;
 }
-.case-img-wrap img {
+
+.thanks-box button{
+    padding: 12px 30px;
+    border: none;
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+@keyframes popupShow{
+    from{
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* Popup cảm ơn */
+.thanks-popup{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
+    background: rgba(0,0,0,0.6);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
 }
-.case-card:hover .case-img-wrap img {
-    transform: scale(1.08);
+
+.thanks-box{
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
 }
-.card-body {
-    padding: 25px;
+
+.thanks-box h2{
+    color: #004a99;
+    margin-bottom: 15px;
 }
-.location-badge {
-    background: rgba(13, 110, 253, 0.1);
-    color: var(--primary-color);
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+
+.thanks-box button{
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    background: #004a99;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* Khung form */
+.donate-container{
+    width: 90%;
+    max-width: 1100px;
+    margin: 60px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+
+    border-radius: 25px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Bên trái */
+.donate-left{
+    padding: 40px;
+    background: linear-gradient(135deg, #004a99, #0066cc);
+    color: white;
+}
+
+.donate-left h2{
+    font-size: 35px;
+    margin-bottom: 20px;
+    color: #004a99;
+}
+
+.donate-left p{
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.donate-left{
+    padding: 40px;
+
+    background: linear-gradient(135deg, #f8fbff, #eef5ff);
+
+    color: #333;
+}
+
+/* Bên phải */
+.donate-right{
+    padding: 40px;
+}
+
+/* Input */
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-group label{
+    display: block;
+    margin-bottom: 8px;
     font-weight: 600;
 }
 
-/* BACK TO TOP */
-#back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    display: none;
-    width: 45px;
-    height: 45px;
-    align-items: center;
+.form-group input,
+.form-group textarea{
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+/* Nút tiền */
+.money-box{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.money-box button{
+    padding: 10px 20px;
+    border: none;
+    background: #f39200;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.money-box button:hover{
+    background: #d97f00;
+    transform: translateY(-3px);
+}
+/* Dropdown menu */
+
+.dropdown-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    background: white;
+    min-width: 230px;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 0;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(10px);
+
+    transition: 0.3s;
+
+    z-index: 999;
+}
+.dropdown{
+    position: relative;
+}
+
+/* Hiện menu khi hover */
+
+.dropdown:hover .dropdown-menu{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Các item bên trong */
+
+.dropdown-menu li{
+    margin: 0;
+    width: 100%;
+}
+
+.dropdown-menu li a{
+    display: block;
+    padding: 14px 18px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.dropdown-menu li a:hover{
+    background: #f5f7fb;
+    color: #004a99;
+}
+/* ===== Trang Bữa Cơm Yêu Thương ===== */
+
+.meal-banner{
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)),
+    url('anh_lam_web/anh27.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
     justify-content: center;
-    box-shadow: var(--hover-shadow);
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 20px;
+}
+
+.program-overlay h1{
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.program-overlay p{
+    font-size: 22px;
+}
+
+.program-section{
+    padding: 70px 20px;
+}
+
+.program-container{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.program-content{
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.program-content h2{
+    color: #004a99;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.program-content p{
+    margin-bottom: 20px;
+    font-size: 17px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Gallery */
+
+.program-gallery{
+    max-width: 1200px;
+
+    margin: 20px auto 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+    padding: 0 20px;
+}
+
+.program-gallery img{
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.program-gallery img:hover{
+    transform: scale(1.02);
+}
+/* Responsive */
+
+@media(max-width:768px){
+
+    .program-overlay h1{
+        font-size: 38px;
+    }
+
+    .program-overlay p{
+        font-size: 18px;
+    }
+
+    .program-content{
+        padding: 25px;
+    }
+
+}
+/* ===== Layout video + nội dung ===== */
+
+.program-container{
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.program-video video{
+    width: 100%;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.program-content{
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.program-content h2{
+    color: #004a99;
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+}
+
+.program-content p{
+    margin-bottom: 18px;
+
+    color: #555;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .program-container{
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ===== Banner Tiếp sức đến trường ===== */
+
+/* ===== Banner Tiếp sức đến trường ===== */
+
+.school-banner{
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)),
+    url('anh_lam_web/anh30.JPG');
+
+    background-size: cover;
+    background-position: center;
+}
+/* Banner chương trình */
+
+/* Banner chung */
+
+.program-banner{
+    width: 100%;
+    height: 500px;
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+}
+
+/* Chữ trên banner */
+
+.program-overlay h1{
+    font-size: 55px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.program-overlay p{
+    font-size: 22px;
+}
+
+/* Nội dung chương trình */
+
+.program-section{
+    padding: 70px 20px;
+}
+
+.program-container{
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 50px;
+    align-items: center;
+}
+
+/* Video */
+
+.program-video video{
+    width: 100%;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Nội dung */
+
+.program-content h2{
+    font-size: 38px;
+    color: #004a99;
+    margin-bottom: 20px;
+}
+
+.program-content p{
+    font-size: 17px;
+    margin-bottom: 18px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Gallery */
+
+.program-gallery{
+    max-width: 1200px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+
+.program-gallery img{
+    width: 100%;
+    height: 250px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.program-gallery img:hover{
+    transform: scale(1.03);
+}
+
+/* Responsive */
+
+@media(max-width: 900px){
+
+    .program-container{
+        grid-template-columns: 1fr;
+    }
+
+    .program-gallery{
+        grid-template-columns: 1fr;
+    }
+
+    .program-overlay h1{
+        font-size: 38px;
+    }
+
+}
+/* Banner cứu trợ miền Trung */
+
+.flood-banner{
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)),
+    url('anh_lam_web/anh35.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ảnh bên trái */
+
+.program-video img{
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+/* Banner cứu trợ miền Trung */
+
+.flood-banner{
+    background:
+    linear-gradient(rgba(0,0,0,0.45),
+    rgba(0,0,0,0.45)),
+    url('anh_lam_web/anh34.jpg');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ảnh bên trái */
+
+.program-video img{
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.popup-content img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.current-donation {
+    background-color: #fff5f5;
+    border: 2px solid #ff6b6b;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0 20px;
+    text-align: center;
+}
+
+.current-donation span {
+    font-size: 16px;
+    color: #555;
+}
+
+.current-donation h3 {
+    margin-top: 8px;
+    color: #e63946;
+    font-size: 32px;
+    font-weight: bold;
 }
