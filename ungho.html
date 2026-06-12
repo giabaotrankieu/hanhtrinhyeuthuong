@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ủng hộ cộng đồng</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+
+function setMoney(amount) {
+    document.getElementById("money-input").value = amount;
+}
+
+</script>
+<script>
+
+function showThanks(){
+
+    document.getElementById("thanks-popup").style.display = "flex";
+
+}
+
+function closePopup(){
+
+    document.getElementById("thanks-popup").style.display = "none";
+
+}
+
+</script>
+
+<body>
+<header>
+        <div class="top-header">
+            <div class="logo">VKU_ALLSTARS</div>
+            <nav>
+                <ul>
+                    <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="danhsach.html">HOÀN CẢNH</a></li>
+                    <li class="dropdown">
+   <a>CHƯƠNG TRÌNH</a>
+
+    <ul class="dropdown-menu">
+        <li><a href="tiepsucdentruong.html">Tiếp sức đến trường</a></li>
+        <li><a href="buacomyeuthuong.html">Bữa cơm yêu thương</a></li>
+        <li><a href="cuutromientrung.html">Cứu trợ miền Trung</a></li>
+    </ul>
+</li>
+                    <li><a href="ungho.html" class="nav-donate">ỦNG HỘ NGAY</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+<section class="donate-section">
+
+    <div class="donate-container">
+
+        <div class="donate-left">
+            <h2>ĐÓNG GÓP ỦNG HỘ</h2>
+            <div class="current-donation">
+    <span>Đã quyên góp được:</span>
+    <h3 id="total-donation">25.500.000 VNĐ</h3>
+</div>
+            <p>
+                Mỗi sự sẻ chia của bạn sẽ giúp mang lại hy vọng cho
+                những hoàn cảnh khó khăn tại Đà Nẵng.
+            </p>
+
+            <img src="anh_lam_web\anh22.jpg" alt="Ủng hộ từ thiện">
+        </div>
+
+        <div class="donate-right">
+
+            <form>
+
+                <div class="form-group">
+                    <label>Họ và tên</label>
+                    <input type="text" placeholder="Nhập họ và tên">
+                </div>
+
+                <div class="form-group">
+                    <label>Số điện thoại</label>
+                    <input type="text" placeholder="Nhập số điện thoại">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Nhập email">
+                </div>
+
+                <div class="form-group">
+                    <label>Số tiền ủng hộ</label>
+                    <input type="number" id="money-input" placeholder="Ví dụ: 100000">
+                </div>
+
+                <div class="money-box">
+    <button type="button" onclick="setMoney(50000)">50K</button>
+    <button type="button" onclick="setMoney(100000)">100K</button>
+    <button type="button" onclick="setMoney(200000)">200K</button>
+    <button type="button" onclick="setMoney(500000)">500K</button>
+</div>
+                <div class="form-group">
+                    <label>Lời nhắn</label>
+                    <textarea rows="4" placeholder="Gửi lời động viên..."></textarea>
+                </div>
+
+
+            </form>
+
+<button type="button" class="donate-btn" onclick="showThanks()">
+    ỦNG HỘ NGAY
+</button>
+
+<div id="thanks-popup" class="thanks-popup">
+    <div class="thanks-box">
+
+        <h2>Cảm ơn bạn ❤️</h2>
+
+        <p>
+            Sự đóng góp của bạn sẽ giúp mang lại hy vọng
+            cho những hoàn cảnh khó khăn.
+        </p>
+
+        <button onclick="closePopup()">
+            Đóng
+        </button>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+</section>
+<script>
+function setMoney(amount) {
+    document.getElementById("money-input").value = amount;
+}
+</script>
+<script>    
+let totalDonation = parseInt(localStorage.getItem("totalDonation")) || 25500000;
+
+document.getElementById("total-donation").innerText =
+    totalDonation.toLocaleString('vi-VN') + " VNĐ";
+function setMoney(amount) {
+    document.getElementById("money-input").value = amount;
+}
+
+function showThanks() {
+localStorage.setItem("totalDonation", totalDonation);
+    let money = parseInt(document.getElementById("money-input").value);
+
+    if (isNaN(money) || money <= 0) {
+        alert("Vui lòng nhập số tiền ủng hộ!");
+        return;
+    }
+
+    totalDonation += money;
+
+    document.getElementById("total-donation").innerText =
+        totalDonation.toLocaleString('vi-VN') + " VNĐ";
+
+    document.getElementById("thanks-popup").style.display = "flex";
+
+    document.getElementById("money-input").value = "";
+}
+
+function closePopup() {
+    document.getElementById("thanks-popup").style.display = "none";
+}
+</script>
+</body>
+</html>

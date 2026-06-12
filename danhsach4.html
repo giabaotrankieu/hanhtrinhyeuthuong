@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quỹ Cứu Trợ Thiên Tai</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+:root{
+    --primary:#0b4f9c;
+    --secondary:#ff7a00;
+}
+
+body{
+    background:linear-gradient(135deg,#eaf3ff,#fff,#fff3e6);
+    color:#333;
+}
+
+/* HEADER */
+header{
+    background:#fff;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.top-header{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    align-items:center;
+}
+
+nav ul li{
+    margin-left:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#444;
+    font-weight:600;
+}
+
+nav ul li a:hover{
+    color:var(--primary);
+}
+
+.nav-donate{
+    background:var(--secondary);
+    color:white !important;
+    padding:10px 20px;
+    border-radius:30px;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:url("https://images.unsplash.com/photo-1500674425229-f692875b0ab7?auto=format&fit=crop&w=1400&q=80") center/cover;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    color:white;
+}
+
+.hero-content h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff9800;
+    color:white;
+    padding:15px 35px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* ABOUT */
+.about{
+    padding:100px 10%;
+}
+
+.container{
+    display:flex;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:40px;
+    color:var(--primary);
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.about-img{
+    flex:1;
+}
+
+.about-img img{
+    width:100%;
+    border-radius:20px;
+}
+
+/* STATS */
+.stats{
+    background:#f5f5f5;
+    padding:80px 10%;
+    display:flex;
+    justify-content:space-around;
+}
+
+.box{
+    text-align:center;
+}
+
+.box h2{
+    font-size:45px;
+    color:#ff7a00;
+}
+
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .container{
+        flex-direction:column;
+    }
+    .stats{
+        flex-direction:column;
+        gap:30px;
+    }
+    .hero-content h1{
+        font-size:40px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="top-header">
+        <div class="logo">VKU_ALLSTARS</div>
+        <nav>
+            <ul>
+                <li><a href="trangchu.html">TRANG CHỦ</a></li>
+                    <li><a href="danhsach.html">HOÀN CẢNH</a></li>
+                    <li><a href="chuongtrinh.html">CHIẾN DỊCH HỖ TRỢ</a></li>
+                    <li><a href="thongke.html">THỐNG KÊ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="ungho.html" class="nav-donate">ỦNG HỘ NGAY</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1 class="reveal">Quỹ Cứu Trợ Thiên Tai</h1>
+        <p class="reveal">Hỗ trợ khẩn cấp cho người dân vùng bão lũ – động đất – thiên tai</p>
+        <a href="ungho.html" class="btn reveal">Quyên góp ngay</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about reveal">
+    <div class="container">
+
+        <div class="about-text">
+            <h2>Hỗ Trợ Khẩn Cấp</h2>
+            <p>
+                Mỗi năm, hàng ngàn hộ gia đình bị ảnh hưởng bởi bão lũ, sạt lở và thiên tai.
+                Họ mất nhà cửa, tài sản và cần sự giúp đỡ kịp thời.
+            </p>
+            <br>
+            <p>
+                Sự đóng góp của bạn giúp cung cấp lương thực, nước sạch và nơi ở tạm an toàn.
+            </p>
+        </div>
+
+        <div class="about-img">
+            <img src="anh_lam_web/anhthientai.jpg">
+        </div>
+
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="stats reveal">
+
+    <div class="box">
+        <h2 class="counter" data-target="3200">0</h2>
+        <p>Người được cứu trợ</p>
+    </div>
+
+    <div class="box">
+        <h2 class="counter" data-target="120">0</h2>
+        <p>Chiến dịch khẩn cấp</p>
+    </div>
+
+    <div class="box">
+        <h2 class="counter" data-target="900">0</h2>
+        <p>Tình nguyện viên</p>
+    </div>
+
+</section>
+
+<script>
+// scroll animation
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+    reveals.forEach(el => {
+        let top = el.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            el.classList.add("active");
+        }
+    });
+});
+
+// counter
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+
+    function update(){
+        const current = +counter.innerText;
+        const inc = target / 100;
+
+        if(current < target){
+            counter.innerText = Math.ceil(current + inc);
+            setTimeout(update, 20);
+        }else{
+            counter.innerText = target;
+        }
+    }
+
+    update();
+});
+</script>
+
+</body>
+</html>
