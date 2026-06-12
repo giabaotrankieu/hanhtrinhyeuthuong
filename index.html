@@ -3,14 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đà Nẵng Charity - Kết nối yêu thương</title>
+    <title>Một dự án vì cộng đồng - Điều sẻ chia bé nhỏ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
         <div class="top-header">
-            <div class="logo">VKU_ALLSTARS</div>
+            <div class="logo">Hành trình yêu thương</div>
+                const textToType = "Hành Trình Yêu Thương";
+    const typingElement = document.getElementById("typing-text");
+    let charIndex = 0;
+
+    function type() {
+        if (charIndex < textToType.length) {
+            typingElement.textContent += textToType.charAt(charIndex);
+            charIndex++;
+            setTimeout(type, 100); // Tốc độ gõ
+        }
+    }
+    setTimeout(type, 1500);
             <nav>
                 <ul>
                     <li><a href="trangchu.html">TRANG CHỦ</a></li>
@@ -25,7 +37,7 @@
     </ul>
 </li>
                     
-                    <li><a href="ungho.html" class="nav-donate">ỦNG HỘ NGAY</a></li>
+                 
 
                 </ul>
             </nav>
@@ -175,7 +187,7 @@
         <br>
 
         <a href="ungho.html" class="btn" style="text-decoration:none;">
-            ỦNG HỘ NGAY
+            
         </a>
     </div>
 </div>
